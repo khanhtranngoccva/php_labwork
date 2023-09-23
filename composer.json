@@ -12,5 +12,7 @@
             "email": "khanhtranngoccva@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "monolog/monolog": "^3.4"
+    }
 }

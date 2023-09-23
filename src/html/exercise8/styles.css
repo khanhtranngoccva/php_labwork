@@ -1,0 +1,14 @@
+html {
+    font-family: "system-ui", sans-serif;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px 0.5rem;
+}
+
+.form input, .form select {
+    padding: 0.5rem 0.25rem;
+}

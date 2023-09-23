@@ -1,0 +1,16 @@
+{
+    "name": "khanhtranngoccva/php_api",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Project\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Khanh",
+            "email": "khanhtranngoccva@gmail.com"
+        }
+    ],
+    "require": {}
+}

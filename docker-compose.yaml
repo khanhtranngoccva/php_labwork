@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  main:
+    image: "trafex/php-nginx"
+    working_dir: "/var/www"
+    tty: true
+    ports:
+      - "8000:8080"
+    volumes:
+      - ".:/var/www"
+      - "./config/nginx/conf.d:/etc/nginx/conf.d"
+    networks:
+      - main_network
+  mysql:
+    image: "mysql"
+    ports:
+      - "8888:3306"
+    tty: true
+    working_dir: "/var/lib/mysql"
+    networks:
+      - main_network
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "php_api"
+    volumes:
+      - "_database:/var/lib/mysql"
+networks:
+  main_network:
+    driver: bridge
+volumes:
+  _database:
+    driver: local
+

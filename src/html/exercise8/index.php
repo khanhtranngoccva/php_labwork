@@ -42,6 +42,48 @@
     <tbody id="students_list">
     </tbody>
 </table>
+<h2>Best Students</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Mark</th>
+        <th>Sex/Gender</th>
+    </tr>
+    </thead>
+    <tbody id="group1">
+    </tbody>
+</table>
+<h2>Good Students</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Mark</th>
+        <th>Sex/Gender</th>
+    </tr>
+    </thead>
+    <tbody id="group2">
+    </tbody>
+</table>
+<h2>Average Students</h2>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Mark</th>
+        <th>Sex/Gender</th>
+    </tr>
+    </thead>
+    <tbody id="group3">
+    </tbody>
+</table>
 </body>
 <script src="/exercise8/index.js"></script>
 </html>

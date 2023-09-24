@@ -25,16 +25,19 @@ async function get_students() {
     return json.data;
 }
 
+async function get_student_buckets() {
+    const json = await (await fetch("/exercise8/get_buckets.php")).json();
+    return json.data;
+}
+
 function create_table_cell(data) {
     const element = document.createElement("td");
     element.innerText = data;
     return element;
 }
 
-async function refresh_students_list() {
-    const students = await get_students();
-    const student_table_body = document.querySelector("#students_list");
-    student_table_body.innerHTML = "";
+function insert_table(table_body, students) {
+    table_body.innerHTML = "";
     for (let student of students) {
         const row = document.createElement("tr");
         row.append(create_table_cell(student.id));
@@ -42,8 +45,23 @@ async function refresh_students_list() {
         row.append(create_table_cell(student.class));
         row.append(create_table_cell(student.mark));
         row.append(create_table_cell(student.sex));
-        student_table_body.append(row);
+        table_body.append(row);
     }
+}
+
+async function refresh_students_list() {
+    const students = await get_students();
+    const students_buckets = await get_student_buckets();
+    console.log(students_buckets)
+    const table_body = document.querySelector("#students_list");
+    insert_table(table_body, students);
+
+    const group1 = document.querySelector("#group1");
+    const group2 = document.querySelector("#group2");
+    const group3 = document.querySelector("#group3");
+    insert_table(group1, students_buckets[2]);
+    insert_table(group2, students_buckets[1]);
+    insert_table(group3, students_buckets[0]);
 }
 
 window.addEventListener("load", function () {

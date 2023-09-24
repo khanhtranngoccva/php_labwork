@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "GET") {
 }
 
 $result1 = $conn->query("SELECT * FROM `students` WHERE mark < 60")->fetch_all(MYSQLI_ASSOC);
-$result2 = $conn->query("SELECT * FROM `students` WHERE 60 <= mark < 75")->fetch_all(MYSQLI_ASSOC);
+$result2 = $conn->query("SELECT * FROM `students` WHERE 60 <= mark AND mark < 75")->fetch_all(MYSQLI_ASSOC);
 $result3 = $conn->query("SELECT * FROM `students` WHERE mark >= 75")->fetch_all(MYSQLI_ASSOC);
 
 $transform = function ($item) {
